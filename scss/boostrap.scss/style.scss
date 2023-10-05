@@ -1,0 +1,31 @@
+
+@mixin gradient-background(){
+	background: rgba(106,0,255,1);
+	background: -moz-linear-gradient(left, rgba(106,0,255,1) 0%, rgba(255,217,0,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(106,0,255,1)), color-stop(100%, rgba(255,217,0,1)));
+	background: -webkit-linear-gradient(left, rgba(106,0,255,1) 0%, rgba(255,217,0,1) 100%);
+	background: -o-linear-gradient(left, rgba(106,0,255,1) 0%, rgba(255,217,0,1) 100%);
+	background: -ms-linear-gradient(left, rgba(106,0,255,1) 0%, rgba(255,217,0,1) 100%);
+	background: linear-gradient(to right, rgba(106,0,255,1) 0%, rgba(255,217,0,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a00ff', endColorstr='#ffd900', GradientType=1 );
+}
+
+
+.hero-wrap{
+	width: 100%;
+	height: 750px;
+	position: relative;
+	&.hero-wrap-2{
+		height: 600px;
+	}
+	.overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: '';
+		opacity: .7;
+		@include gradient-background();
+	}
+}
